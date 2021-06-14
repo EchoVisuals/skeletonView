@@ -4,7 +4,7 @@ import UIKit
 
 extension UIView {
     @objc var subviewsSkeletonables: [UIView] {
-        subviewsToSkeleton.filter { $0.isSkeletonable }
+        subviewsToSkeleton.filter { $0.isSkeletonable || String(describing: type(of: $0)) == "_UICollectionViewOrthogonalScrollerEmbeddedScrollView" }
     }
 
     @objc var subviewsToSkeleton: [UIView] {
